@@ -5,6 +5,7 @@ import '../models/meal.dart';
 import '../screens/meal_detail_screen.dart';
 
 class MealItem extends StatelessWidget {
+  final String id;
   final String imageUrl;
   final String title;
   final int duration;
@@ -12,6 +13,7 @@ class MealItem extends StatelessWidget {
   final Affordability affordability;
 
   MealItem({
+    this.id,
     this.title,
     this.imageUrl,
     this.duration,
@@ -53,6 +55,7 @@ class MealItem extends StatelessWidget {
 
   void _selectMeal(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(MealDetailScreen.routeName, arguments: {
+      'id': id,
       'title': title,
     });
   }
@@ -118,10 +121,13 @@ class MealItem extends StatelessWidget {
                       Text(
                         '$duration min',
                         style: TextStyle(
-                          fontSize: 20.0,
+                          fontSize: 18.0,
                         ),
                       ),
                     ],
+                  ),
+                  SizedBox(
+                    width: 6.0,
                   ),
                   Row(
                     children: <Widget>[
@@ -132,7 +138,7 @@ class MealItem extends StatelessWidget {
                       Text(
                         complexityText,
                         style: TextStyle(
-                          fontSize: 20.0,
+                          fontSize: 18.0,
                         ),
                       ),
                     ],
@@ -140,13 +146,10 @@ class MealItem extends StatelessWidget {
                   Row(
                     children: <Widget>[
                       Icon(Icons.attach_money),
-                      SizedBox(
-                        width: 6.0,
-                      ),
                       Text(
                         affordabilityText,
                         style: TextStyle(
-                          fontSize: 20.0,
+                          fontSize: 18.0,
                         ),
                       ),
                     ],
