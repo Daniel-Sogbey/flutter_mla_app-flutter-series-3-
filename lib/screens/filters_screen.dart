@@ -23,8 +23,18 @@ class _FiltersScreenState extends State<FiltersScreen> {
   }) {
     return SwitchListTile(
       value: value,
-      title: Text(title),
-      subtitle: Text(subTitle),
+      title: Text(
+        title,
+        style: TextStyle(
+          fontSize: 22.0,
+        ),
+      ),
+      subtitle: Text(
+        subTitle,
+        style: TextStyle(
+          fontSize: 20.0,
+        ),
+      ),
       onChanged: onUpdateHandler,
     );
   }

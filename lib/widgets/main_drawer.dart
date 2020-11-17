@@ -59,6 +59,27 @@ class MainDrawer extends StatelessWidget {
             },
             Icons.settings,
           ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.58,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Version: ',
+                style: TextStyle(
+                  fontSize: 20.0,
+                ),
+              ),
+              Text(
+                '1.0.0',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  letterSpacing: 5.0,
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
