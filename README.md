@@ -1,4 +1,4 @@
-# meals_app
+# mls_app
 
 A new Flutter application.
 
