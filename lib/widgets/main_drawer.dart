@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../screens/filters_screen.dart';
+
 class MainDrawer extends StatelessWidget {
   Widget _buildDrawerLink(String text, Function onTapHandler, IconData icon) {
     return ListTile(
@@ -45,13 +47,16 @@ class MainDrawer extends StatelessWidget {
           _buildDrawerLink(
             'Meal',
             () {
-              Navigator.of(context).pushNamed('/');
+              Navigator.of(context).pushReplacementNamed('/');
             },
             Icons.restaurant,
           ),
           _buildDrawerLink(
-            'Settings',
-            () {},
+            'Filters',
+            () {
+              Navigator.of(context)
+                  .pushReplacementNamed(FiltersScreen.routeName);
+            },
             Icons.settings,
           ),
         ],
