@@ -11,6 +11,7 @@ class MealItem extends StatelessWidget {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
+  final Function updateMealsHandler;
 
   MealItem({
     this.id,
@@ -19,6 +20,7 @@ class MealItem extends StatelessWidget {
     this.duration,
     this.complexity,
     this.affordability,
+    this.updateMealsHandler,
   });
 
   String get complexityText {
@@ -57,7 +59,7 @@ class MealItem extends StatelessWidget {
     Navigator.of(ctx).pushNamed(MealDetailScreen.routeName, arguments: {
       'id': id,
       'title': title,
-    });
+    }).then((result) => updateMealsHandler(result));
   }
 
   @override
